@@ -10,4 +10,4 @@
 
 Пример наследования, демонстрируемого с помощью диаграммы UML:
 
-![Image alt](https://github.com/IlnarAhm/php-design-patterns/raw/main/{path}/UML-1.png)
+![Image alt](https://github.com/IlnarAhm/php-design-patterns/raw/main/Strategy/img/UML-1.png)
