@@ -41,10 +41,6 @@
 
 Приведем упрощенную версию нового класса Lesson, показанного на рис. 3:
 
--   [Lesson](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/Lesson.php)
--   [Lecture](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/Lecture.php)
--   [Seminar](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/Seminar.php)
-
 ```php
 abstract class Lesson
 {
@@ -81,6 +77,10 @@ class Seminar extends Lesson
 }
 ```
 
+-   [Lesson](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/Lesson.php)
+-   [Lecture](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/Lecture.php)
+-   [Seminar](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/Seminar.php)
+
 Конструктору класса _Lesson_ передается объект типа _CostStrategy_, который он сохраняет в виде свойства. В методе _Lesson::cost()_ просто делается вызов _CostStrategy::cost()_. Аналогично в методе _Lesson::chargeType()_ делается вызов _CostStrategy::chargeType()_. Такой явный вызов метода из другого объекта для выполнения запроса называется делегированием. В рассматриваемом здесь примере объект типа _CostStrategy_ является делегатом класса _Lesson_. А класс _Lesson_ снимает с себя ответственность за расчет стоимости занятия и возлагает эту обязанность на реализацию класса _CostStrategy_. Ниже показано, каким образом осуществляется делегирование:
 
 ```php
@@ -91,10 +91,6 @@ public function cost(): int
 ```
 
 А вот определение класса _CostStrategy_ вместе с реализующими его дочерними классами:
-
--   [CostStrategy](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/CostStrategy.php)
--   [TimedCostStrategy](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/TimedCostStrategy.php)
--   [FixedCostStrategy](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/FixedCostStrategy.php)
 
 ```php
 abstract class CostStrategy
@@ -127,6 +123,10 @@ class FixedCostStrategy extends CostStrategy
     }
 }
 ```
+
+-   [CostStrategy](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/CostStrategy.php)
+-   [TimedCostStrategy](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/TimedCostStrategy.php)
+-   [FixedCostStrategy](https://github.com/IlnarAhm/php-design-patterns/tree/main/Strategy/FixedCostStrategy.php)
 
 Теперь во время выполнения программы можно легко изменить способ расчета стоимости занятий, выполняемый любым объектом типа _Lesson_, передав ему другой объект типа _CostStrategy_. Такой подход способствует созданию довольно гибкого кода. Вместо того чтобы статично встраивать функциональность в структуры кода, можно комбинировать объекты и менять их сочетания динамически:
 
