@@ -12,8 +12,8 @@
 
 ![Image alt](https://github.com/IlnarAhm/php-design-patterns/raw/main/Strategy/img/UML-1.png)
 
-<figcaption align = "center"><b>Puc. 1.</b> <i>Родительский класс и два дочерних класса</i></figcaption>
-<br/>
+<figcaption align="center"><b>Puc. 1.</b> <i>Родительский класс и два дочерних класса</i></figcaption>
+<br/><br/>
 
 Абстрактный класс Lesson на рис. 1 моделирует обучение в коллед- же и определяет абстрактные методы _cost()_ и _chargeType()_ . На диаграмме показаны два реализующих их класса, _FixedPriceLesson_ и _TimedPriceLesson_, которые обеспечивают разные механизмы оплаты занятий.
 
@@ -23,8 +23,8 @@
 
 ![Image alt](https://github.com/IlnarAhm/php-design-patterns/raw/main/Strategy/img/UML-2.png)
 
-<figcaption align = "center"><b>Puc. 2.</b> <i>Неудачная структура наследования</i></figcaption>
-<br/>
+<figcaption align="center"><b>Puc. 2.</b> <i>Неудачная структура наследования</i></figcaption>
+<br/><br/>
 
 На рис. 2 приведена явно неудачная иерархия. Такое дерево наследования нельзя в дальнейшем использовать для того, чтобы управлять механизмами оплаты, не дублируя большие блоки функциональных средств. Эти механизмы оплаты повторяются в семействах классов Lecture и Seminar.
 
@@ -36,8 +36,8 @@
 
 ![Image alt](https://github.com/IlnarAhm/php-design-patterns/raw/main/Strategy/img/UML-3.png)
 
-<figcaption align = "center"><b>Puc. 3.</b> <i>Перемещение алгоритмов в отдельный тип данных</i></figcaption>
-<br/>
+<figcaption align="center"><b>Puc. 3.</b> <i>Перемещение алгоритмов в отдельный тип данных</i></figcaption>
+<br/><br/>
 
 Приведем упрощенную версию нового класса Lesson, показанного на рис. 3:
 
